@@ -29,15 +29,25 @@ const ProductManagement = () => {
   }, []);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value, files } = e.target;
+
+    if (name === 'image' && files.length > 0) {
+      const imageFile = files[0];
+      setFormData({ ...formData, [name]: URL.createObjectURL(imageFile) });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!formData.image) {
-      toast.error('Vui lòng cung cấp đường dẫn ảnh.');
+      toast.error('Vui lòng tải lên ảnh từ máy tính.');
       return;
     }
+
 
     try {
       if (editingProduct) {
@@ -73,10 +83,14 @@ const ProductManagement = () => {
     });
   };
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id, status) => {
     try {
       await deleteProduct(id);
-      toast.success('Xóa sản phẩm thành công!');
+      if (status === 0) {
+        toast.success('Hiển thị sản phẩm thành công!');
+      } else {
+        toast.success('Ẩn sản phẩm thành công!');
+      }
       const data = await fetchAllProducts();
       setProducts(data);
     } catch (error) {
@@ -84,6 +98,7 @@ const ProductManagement = () => {
       toast.error(errorMessage);
     }
   };
+
   const formatPrice = (price) => {
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
   };
@@ -123,7 +138,21 @@ const ProductManagement = () => {
                 <input type="number" className="form-control" name="price" value={formData.price} onChange={handleChange} placeholder="Giá sản phẩm" required />
               </div>
               <div className="form-group col-md-6">
-                <input type="text" className="form-control" name="image" value={formData.image} onChange={handleChange} placeholder="Đường dẫn ảnh" required />
+                <input
+                  type="file"
+                  className="form-control"
+                  name="image"
+                  accept="image/*"
+                  onChange={handleChange}
+                  required
+                />
+                {formData.previewImage && (
+                  <img
+                    src={formData.previewImage}
+                    alt="Preview"
+                    style={{ width: '100px', height: '100px', objectFit: 'cover', marginTop: '10px' }}
+                  />
+                )}
               </div>
             </div>
             <div className="justify-content-between mb-4">
@@ -240,18 +269,19 @@ const ProductManagement = () => {
                 {productItem.status === 0 ? (
                   <button
                     className="btn btn-success mr-2"
-                    onClick={() => handleDelete(productItem.product.id)}
+                    onClick={() => handleDelete(productItem.product.id, productItem.status)}
                   >
                     Hiển thị
                   </button>
                 ) : (
                   <button
                     className="btn btn-danger mr-2"
-                    onClick={() => handleDelete(productItem.product.id)}
+                    onClick={() => handleDelete(productItem.product.id, productItem.status)}
                   >
                     Xóa
                   </button>
                 )}
+
               </td>
             </tr>
           ))}
