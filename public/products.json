@@ -1,0 +1,70 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "product": {
+        "id": 2,
+        "productName": "Burger cá hồi",
+        "rate": null,
+        "createAt": null,
+        "updatedAt": null,
+        "image": "/img/product/burger/burgercahoi.jpg"
+      },
+      "price": 1010101,
+      "quantity": 20,
+      "description": null,
+      "category": {
+        "id": 1,
+        "categoryName": "burger",
+        "icon": "/img/iconmenu/burger.png",
+        "createdAt": "2024-11-19T11:22:41Z",
+        "updatedAt": "2024-11-19T22:49:34Z"
+      },
+      "isHot": null
+    },
+    {
+      "id": 3,
+      "product": {
+        "id": 3,
+        "productName": "Burger thịt gà",
+        "rate": null,
+        "createAt": null,
+        "updatedAt": null,
+        "image": "/img/product/burger/burgerga.jpg"
+      },
+      "price": 100000,
+      "quantity": 10,
+      "description": null,
+      "category": {
+        "id": 1,
+        "categoryName": "burger",
+        "icon": "/img/iconmenu/burger.png",
+        "createdAt": "2024-11-19T11:22:41Z",
+        "updatedAt": "2024-11-19T22:49:34Z"
+      },
+      "isHot": null
+    },
+    {
+      "id": 4,
+      "product": {
+        "id": 4,
+        "productName": "Burger thịt heo",
+        "rate": null,
+        "createAt": null,
+        "updatedAt": null,
+        "image": "/img/product/burger/burgerheo.jpg"
+      },
+      "price": 100000,
+      "quantity": 10,
+      "description": null,
+      "category": {
+        "id": 1,
+        "categoryName": "burger",
+        "icon": "/img/iconmenu/burger.png",
+        "createdAt": "2024-11-19T11:22:41Z",
+        "updatedAt": "2024-11-19T22:49:34Z"
+      },
+      "isHot": null
+    }
+  ]
+}

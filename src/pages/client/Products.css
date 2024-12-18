@@ -1,0 +1,11 @@
+.btn-danger {
+    width: 100px; /* Đảm bảo tất cả nút có chiều rộng cố định */
+    text-align: center; /* Căn giữa chữ trong nút */
+    padding: 5px 10px; /* Đảm bảo kích thước nút nhất quán */
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Tạo khoảng cách giữa nội dung */
+    height: 100%; /* Đảm bảo toàn bộ chiều cao */
+}

@@ -1,0 +1,62 @@
+.dashboard-icon {
+    font-size: 2.5rem;
+}
+
+.card {
+    transition: transform 0.2s;
+    border-radius: 12px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.form-select {
+    min-width: 180px;
+    border-radius: 8px;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.card-body {
+    padding: 2rem 1.5rem;
+}
+
+.modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.modal-content {
+    border-radius: 12px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .dashboard-icon {
+        font-size: 2rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem 1rem;
+    }
+    
+    .icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+}

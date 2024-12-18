@@ -1,0 +1,117 @@
+/* Container cho toàn bộ trang đăng nhập */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    transition: all 0.3s ease-in-out; /* Thêm hiệu ứng động */
+  }
+  
+  /* Banner cửa hàng - bên trái (Chiếm 40% màn hình) */
+  .register-banner {
+    flex: 0 0 40%; /* Chiếm 40% chiều rộng */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo và bao phủ hết phần container */
+  }
+  
+  /* Phần đăng nhập - bên phải (Chiếm 60% màn hình) */
+  .register-form-container {
+    flex: 0 0 60%; /* Chiếm 60% chiều rộng */
+    max-width: 600px; /* Giới hạn chiều rộng tối đa cho form */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out; /* Thêm hiệu ứng động cho form */
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease; /* Hiệu ứng động khi focus vào input */
+  }
+  
+  .input-group input:focus {
+    border-color: #AD343E; /* Màu khi focus vào ô input */
+  }
+  
+  /* Nút đăng nhập */
+  .register-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #AD343E; /* Màu nút đăng nhập */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Hiệu ứng khi hover */
+  }
+  
+  .register-button:hover {
+    background-color: #861B2E; /* Màu khi hover vào nút đăng nhập */
+  }
+  
+  /* Dòng "Bạn chưa có tài khoản?" */
+  .signup-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .signup-link p {
+    font-size: 14px;
+  }
+  
+  .signup-link a {
+    color: #AD343E; /* Màu đăng ký */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Hiệu ứng khi hover vào link */
+  }
+  
+  .signout-link a:hover {
+    color: #861B2E; 
+  }
+  
+  /* Ẩn phần banner khi màn hình nhỏ */
+  @media (max-width: 768px) {
+    .register-banner {
+      display: none; /* Ẩn banner khi màn hình nhỏ */
+    }
+  
+    .register-form-container {
+      max-width: 100%;
+    }
+  
+
+    .register-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  

@@ -1,0 +1,58 @@
+
+  .slider .slide-item .slide-img {
+    border-radius: 30px;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box; 
+    margin-right: 0;
+    height: auto;
+  }
+
+  .product-slider {
+    margin: 50px 0;
+  }
+  
+  .product-card {
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    height: 600px; /* Chiều cao cố định */
+    display: flex;
+    justify-content: space-between; /* Để các phần tử bên trong được phân bổ đều */
+  }
+  
+  .product-image {
+    width: 100%; /* Chiều rộng hình ảnh chiếm hết chiều rộng của khung */
+    height: 400px; /* Chiều cao hình ảnh cố định */
+    object-fit: cover; /* Giữ tỉ lệ hình ảnh và không bị méo mó */
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .product-name {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Để cắt bớt văn bản nếu dài */
+    white-space: nowrap; /* Đảm bảo văn bản không xuống dòng */
+  }
+  
+  .product-description {
+    color: #555;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .product-price {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  

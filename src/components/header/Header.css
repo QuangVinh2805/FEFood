@@ -1,0 +1,63 @@
+/* Định nghĩa các biến màu để dễ quản lý */
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-dark: #343a40;
+  --color-hover-bg: #f0f0f0;
+  --color-hover-text: #ff9800;
+  --color-red: #AD343E;
+}
+
+/* Định dạng cho top bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-white); /* Sử dụng biến màu */
+  padding: 10px 50px; /* Thu gọn 50px mỗi bên */
+  color: var(--color-black); /* Sử dụng biến màu */
+}
+
+
+.auth-links {
+  display: flex;
+  gap: 15px;
+}
+
+.auth-links .btn {
+  font-weight: bold;
+  color: var(--color-black); /* Sử dụng biến màu */
+  border-color: var(--color-black); /* Sử dụng biến màu */
+}
+
+.auth-links .btn:hover {
+  background-color: var(--color-hover-bg); /* Sử dụng biến màu */
+  color: var(--color-black); /* Sử dụng biến màu */
+}
+
+/* Điều chỉnh cho thanh điều hướng bên dưới */
+.nav-bar-custom {
+  padding: 0; /* Loại bỏ padding bên trong nav bar */
+  background-color: var(--color-red); /* Sử dụng biến màu */
+}
+
+.navbar-nav {
+  margin: 0 auto; /* Trung tâm hóa thanh điều hướng */
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between; /* Giãn đều các mục điều hướng */
+  width: 100%;
+  max-width: 1200px; /* Đặt max-width để thu gọn phần thanh điều hướng */
+}
+
+.navbar-nav .nav-link {
+  color: var(--color-white); /* Sử dụng biến màu */
+  text-transform: uppercase;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--color-dark); /* Sử dụng biến màu */
+}
+

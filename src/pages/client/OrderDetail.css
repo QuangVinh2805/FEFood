@@ -1,0 +1,51 @@
+.order-group {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.order-group h2 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.order-group p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.order-details-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.order-details-table th,
+.order-details-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.order-details-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #555;
+}
+
+.order-details-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.order-details-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.order-product-image {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+}

@@ -1,0 +1,103 @@
+/* Định dạng cho toàn bộ footer */
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Căn chỉnh các phần tử sang hai bên */
+  align-items: flex-start; /* Căn chỉnh các phần tử theo chiều dọc ở đầu */
+  max-width: 1200px; /* Đặt chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa container */
+}
+
+.footer_about,
+.footer_title,
+.footer_social {
+  width: 30%; /* Đặt chiều rộng của các phần tử để chúng không bị tràn và cân đối */
+}
+
+.footer_about_logo,
+.footer_title h1,
+.footer_social h1 {
+  font-size: 18px; /* Đặt kích thước chữ tiêu đề */
+  margin-bottom: 15px;
+  font-weight: bold; /* Làm nổi bật tiêu đề */
+}
+
+.footer_about ul,
+.footer_title ul,
+.footer_social ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer_about ul li,
+.footer_title ul li,
+.footer_social ul li {
+  margin-bottom: 10px;
+}
+
+.footer_about ul li {
+  font-size: 14px; /* Kích thước chữ nhỏ hơn cho thông tin liên hệ */
+}
+
+.footer_title h1,
+.footer_social h1 {
+  margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+}
+
+.footer_title ul li a,
+.footer_social ul li a {
+  color: #ffffff; /* Màu chữ cho liên kết */
+  text-decoration: none;
+}
+
+.footer_title ul li a:hover,
+.footer_social ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Định dạng phần theo dõi tôi */
+.footer_social h1 {
+  font-size: 18px; /* Kích thước chữ tiêu đề */
+  margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+}
+
+.footer_social ul {
+  display: flex; /* Sử dụng Flexbox để sắp xếp các liên kết xã hội ngang hàng */
+  padding: 0;
+}
+
+.footer_social ul li {
+  margin-right: 15px; /* Khoảng cách giữa các liên kết xã hội */
+}
+
+.footer_social ul li a {
+  color: #ffffff; /* Màu chữ cho liên kết */
+  text-decoration: none;
+}
+
+.footer_social ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Đảm bảo các phần tử footer được căn chỉnh phù hợp */
+@media (max-width: 991px) {
+  .footer-container {
+    flex-direction: column; /* Xếp các phần tử theo chiều dọc trên thiết bị nhỏ hơn */
+    text-align: center; /* Căn giữa nội dung trên các thiết bị nhỏ hơn */
+  }
+
+  .footer_about,
+  .footer_title,
+  .footer_social {
+    width: 100%; /* Đặt chiều rộng của các phần tử thành 100% để chúng không bị chồng lên nhau */
+    margin-bottom: 20px; /* Thêm khoảng cách dưới cho các phần tử */
+  }
+
+  .footer_social ul {
+    flex-direction: column; /* Xếp các liên kết xã hội theo chiều dọc trên thiết bị nhỏ hơn */
+  }
+
+  .footer_social ul li {
+    margin-bottom: 10px; /* Khoảng cách giữa các liên kết xã hội trên thiết bị nhỏ hơn */
+    margin-right: 0; /* Loại bỏ khoảng cách bên phải trên thiết bị nhỏ hơn */
+  }
+}

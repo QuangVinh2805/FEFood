@@ -1,0 +1,16 @@
+.admin-layout {
+  display: flex;
+}
+
+.admin-content {
+  margin-left: 250px;
+  padding: 20px;
+  width: 100%;
+  transition: margin-left 0.3s;
+}
+
+.admin-layout .sidebar.collapsed + .admin-content {
+  margin-left: 80px;
+}
+
+  
