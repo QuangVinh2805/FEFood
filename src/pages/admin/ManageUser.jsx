@@ -179,29 +179,33 @@ function ManageUser() {
         <tbody>
           {filteredUsers.length > 0 ? (
             filteredUsers.map((user) => (
-              <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.username}</td>
-                <td>{user.name}</td>
-                <td>{user.birthday ? new Date(user.birthday).toLocaleDateString() : 'Chưa có'}</td>
-                <td>{user.address}</td>
-                <td>{user.email}</td>
-                <td>{user.phoneNumber}</td>
-                <td>
-                  <button className="btn btn-warning mr-2" onClick={() => handleEdit(user)}>Sửa</button>
-                  <button className="btn btn-danger mr-2" onClick={() => handleDelete(user.id)}>Xóa</button>
-                </td>
-              </tr>
+                <tr key={user.id}>
+                  <td>{user.id}</td>
+                  <td>{user.username}</td>
+                  <td>{user.name}</td>
+                  <td>{user.birthday ? new Date(user.birthday).toLocaleDateString() : 'Chưa có'}</td>
+                  <td>{user.address}</td>
+                  <td>{user.email}</td>
+                  <td>{user.phoneNumber}</td>
+                  <td>
+                    <button className="btn btn-warning mr-2" onClick={() => handleEdit(user)}>
+                      <i className="fas fa-edit"></i>
+                    </button>
+                    <button className="btn btn-danger mr-2" onClick={() => handleDelete(user.id)}>
+                      <i className="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
             ))
           ) : (
-            <tr>
-              <td colSpan="10" className="text-center">Không có dữ liệu để hiển thị.</td>
-            </tr>
+              <tr>
+                <td colSpan="10" className="text-center">Không có dữ liệu để hiển thị.</td>
+              </tr>
           )}
         </tbody>
       </Table>
 
-      <ToastContainer />
+      <ToastContainer/>
     </div>
   );
 }

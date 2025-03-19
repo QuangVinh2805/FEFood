@@ -261,27 +261,26 @@ const ProductManagement = () => {
               </td>
               <td>
                 <button
-                  className="btn btn-warning mr-2"
-                  onClick={() => handleEdit(productItem)}
+                    className="btn btn-warning mr-2"
+                    onClick={() => handleEdit(productItem)}
                 >
-                  Sửa
+                  <i className="fas fa-edit"></i>
                 </button>
                 {productItem.status === 0 ? (
-                  <button
-                    className="btn btn-success mr-2"
-                    onClick={() => handleDelete(productItem.product.id, productItem.status)}
-                  >
-                    Hiển thị
-                  </button>
+                    <button
+                        className="btn btn-success mr-2"
+                        onClick={() => handleDelete(productItem.product.id, productItem.status)}
+                    >
+                      <i className="fas fa-eye"></i>
+                    </button>
                 ) : (
-                  <button
-                    className="btn btn-danger mr-2"
-                    onClick={() => handleDelete(productItem.product.id, productItem.status)}
-                  >
-                    Xóa
-                  </button>
+                    <button
+                        className="btn btn-danger mr-2"
+                        onClick={() => handleDelete(productItem.product.id, productItem.status)}
+                    >
+                      <i className="fas fa-trash-alt"></i>
+                    </button>
                 )}
-
               </td>
             </tr>
           ))}

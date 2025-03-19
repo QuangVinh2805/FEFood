@@ -143,38 +143,32 @@ function ManageCategory() {
         <tbody>
           {filteredCategories.length > 0 ? (
             filteredCategories.map((category) => (
-              <tr key={category.id}>
-                <td>{category.id}</td>
-                <td>{category.categoryName}</td>
-                <td>{new Date(category.createdAt).toLocaleDateString()}</td>
-                <td>{new Date(category.updatedAt).toLocaleDateString()}</td>
-                <td>
-                  <button
-                    className="btn btn-warning mr-2"
-                    onClick={() => handleEdit(category)}
-                  >
-                    Sửa
-                  </button>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => handleDelete(category.id)}
-                  >
-                    Xóa
-                  </button>
-                </td>
-              </tr>
+                <tr key={category.id}>
+                  <td>{category.id}</td>
+                  <td>{category.categoryName}</td>
+                  <td>{new Date(category.createdAt).toLocaleDateString()}</td>
+                  <td>{new Date(category.updatedAt).toLocaleDateString()}</td>
+                  <td>
+                    <button className="btn btn-warning mr-2" onClick={() => handleEdit(category)}>
+                      <i className="fas fa-edit"></i>
+                    </button>
+                    <button className="btn btn-danger mr-2" onClick={() => handleDelete(category)}>
+                      <i className="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
             ))
           ) : (
-            <tr>
-              <td colSpan="6" className="text-center">
-                Không có dữ liệu để hiển thị.
-              </td>
-            </tr>
+              <tr>
+                <td colSpan="6" className="text-center">
+                  Không có dữ liệu để hiển thị.
+                </td>
+              </tr>
           )}
         </tbody>
       </Table>
 
-      <ToastContainer />
+      <ToastContainer/>
     </div>
   );
 }

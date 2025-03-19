@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const OrderDetails = ({ id }) => {
     const navigate = useNavigate();
     const [orders, setOrders] = useState([]);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     // Map trạng thái đơn hàng
     const getOrderStatus = (status) => {
@@ -50,40 +51,44 @@ const OrderDetails = ({ id }) => {
     };
 
     useEffect(() => {
-        // Gọi API để lấy dữ liệu
-        const fetchOrderDetails = async () => {
-            try {
-                const userId = localStorage.getItem("userId");
-                localStorage.setItem("redirectAfterLogin", '/order-detail');
-                if (userId == null) {
-                    navigate("/login");
-                    return;
-                }
-                const response = await axios.get(`http://localhost:8203/order/get/${userId}`);
+        const checkLogin = async () => {
+            const userId = localStorage.getItem("userId");
+            if (userId == null) {
+                navigate("/login");
+            } else {
+                setIsLoggedIn(true);
+                const fetchOrderDetails = async () => {
+                    try {
+                        const response = await axios.get(`http://localhost:8203/order/get/${userId}`);
 
-                // Gom nhóm dữ liệu theo `order_id`
-                const groupedOrders = response.data.reduce((acc, item) => {
-                    const orderId = item.order.id;
-                    if (!acc[orderId]) {
-                        acc[orderId] = {
-                            orderId,
-                            status: item.order.status || 0, // Thêm trạng thái
-                            createdAt: item.order.createdAt,
-                            totalPrice: item.order.totalPrice,
-                            items: [],
-                        };
+                        // Gom nhóm dữ liệu theo `order_id`
+                        const groupedOrders = response.data.reduce((acc, item) => {
+                            const orderId = item.order.id;
+                            if (!acc[orderId]) {
+                                acc[orderId] = {
+                                    orderId,
+                                    status: item.order.status || 0, // Thêm trạng thái
+                                    createdAt: item.order.createdAt,
+                                    totalPrice: item.order.totalPrice,
+                                    items: [],
+                                };
+                            }
+                            acc[orderId].items.push(item);
+                            return acc;
+                        }, {});
+
+                        setOrders(Object.values(groupedOrders));
+                    } catch (error) {
+                        console.error("Error fetching order details:", error);
                     }
-                    acc[orderId].items.push(item);
-                    return acc;
-                }, {});
+                };
 
-                setOrders(Object.values(groupedOrders));
-            } catch (error) {console.error("Error fetching order details:", error);
+                fetchOrderDetails();
             }
         };
 
-        fetchOrderDetails();
-    }, [id]);
+        checkLogin();
+    }, [navigate, id]);
 
     return (
         <div className="order-details-container">
