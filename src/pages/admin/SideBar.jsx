@@ -28,7 +28,7 @@ const Sidebar = () => {
       </div>
       <ul className="sidebar-menu">
         <li>
-          <Link to="/admin/dashboard">Dashboard</Link>
+          <Link to="/admin/dashboard">Thống kê</Link>
         </li>
         <li>
           <Link to="/admin/manageproducts">Quản lý sản phẩm</Link>
